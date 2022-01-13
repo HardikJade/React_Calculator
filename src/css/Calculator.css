@@ -1,9 +1,9 @@
+
 .container{
     position: absolute;
     overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    /* top: 50%;
+    left: 50%; */
     z-index: 999999 !important;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 6px;
@@ -13,6 +13,8 @@
     box-shadow: 5px 5px 30px rgb(0 0 0 / 20%);
     min-height: 520px;
     min-width: 300px;
+    will-change: transform;
+    transform: perspective(1000px) rotateX(-7.71deg) rotateY(-14.65deg) scale3d(1, 1, 1);
 }
 .screen{
     height: 140px;

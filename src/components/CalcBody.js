@@ -1,11 +1,19 @@
 import React,{useEffect,useContext} from 'react'
 import keyContext from '../context/KeyContext'
 import '../css/Calculator.css'
+import VanillaTilt from '../js/tilt'
 import { Input } from './Input'
 import { Screen } from './Screen'
 export const CalcBody = () => {
     const {setKeyState} = useContext(keyContext)
-    useEffect(() => {
+    useEffect(() => { 
+        VanillaTilt.init(document.querySelector(".carry"), {
+            max: 15,
+            speed: 400,
+            glare:true,
+            "max-glare":0.2,
+        });
+       
         window.addEventListener('keydown',(e)=>{
             if(e.key === '7'){
                 document.querySelector('.seven-class').click()
@@ -87,7 +95,7 @@ export const CalcBody = () => {
     }, [])
     return (
     <>
-        <div className="container">
+        <div className="container carry">
             <Screen/>
             <Input/>
         </div>
