@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+.App{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.skeleton{
+    height: 100%;
+    width: 100%;
+    background: #091921;
+}
+.skeleton:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#e91e63,#ffc107);
+    clip-path: circle(22% at 30% 20%);
+}
+.skeleton::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffffff,#da00ff);
+    clip-path: circle(20% at 70% 90%);
+}
