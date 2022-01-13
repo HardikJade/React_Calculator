@@ -18,7 +18,29 @@ export const Key = (props) => {
         }
         else{setKeyState(keyState  + event.target.innerText)}
     }
-    return (<div className="key_body" onClick={key_press} className={`${(props.data === '+' || props.data==='=')? (props.data === '=' ? "equal" : 'plus') : props.data}-class key`}>{props.data}</div>)
+    const dict = {
+        '+':'plus',
+        '-':'minus',
+        'x':'multiply',
+        '/':'divide',
+        '7':'seven',
+        '8':'eight',
+        '9':'nine',
+        '6':'six',
+        '5':'five',
+        '4':'four',
+        '3':'three',
+        '2':'two',
+        '1':'one',
+        '0':'zero',
+        'C':'C',
+        '00':'dzero',
+        '.':'dot',
+        '=':'equal'
+    }
+    return (
+        <div className="key_body" onClick={key_press} className={`${dict[props.data]}-class key`}>{props.data}</div>
+    )
 }
 Key.prototype = {
     data :  PropTypes.string
